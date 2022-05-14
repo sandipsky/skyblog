@@ -1,5 +1,5 @@
 from pathlib import Path
-from decouple import config
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('django-insecure-n_25*bra7%!%jq(x3dg7(ry0_(jtm+wi4ce3)f($4#nup6l+yd')
+SECRET_KEY = 'django-insecure-n_25*bra7%!%jq(x3dg7(ry0_(jtm+wi4ce3)f($4#nup6l+yd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -108,6 +108,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+	os.path.join(BASE_DIR, 'static')
+]
+
+MEDIA_URL = '/images/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

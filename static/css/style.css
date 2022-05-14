@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    background: #f6f6f6;
+    font-family: 'Lora';
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Candal';
+    color: #444;
+}
+a
+{
+    text-decoration: none;
+}
+
+/* navbar */
+header
+{
+    background-color: #008489;
+    height: 66px;
+    color: white;
+}
+
+header .logo
+{
+    float: left;
+    margin-left: 2em;
+    
+}
+header .logo-text
+{
+    font-family: 'Candal';
+    margin: 9px;
+    color: #f6f6f6;
+}
+header .logo-text span{
+    color: #05f7ff;
+}
+
+header ul
+{
+    float: right;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lara';
+    z-index: 999999999;
+}
+header ul li
+{
+    display: inline-block;
+    position: relative;
+}
+header ul li ul
+{
+    position: absolute;
+    top: 66px;
+    right: 0px;
+    left: 0px;
+    width: fit-content;
+    display: none;
+    background-color: white;
+    z-index: 9999;
+}
+
+header ul li:hover ul
+{
+    display: block;
+}
+header ul li ul li
+{
+    width: 100%;
+}
+header ul li ul li a
+{
+    padding: 10px;
+    color: #444;
+}
+header ul li ul li a:hover
+{
+    background-color: #d5d5d6;
+}
+header ul li ul li a span
+{
+    color: red;
+}
+header ul li a
+{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 21px;
+    font-size: 1.2em;
+}
+header ul li a:hover
+{
+    background-color: #006669;
+    transition: ease 0.5s;
+}
+#menu-toggle
+{
+    display: none;
+}
+
+.page-wrapper a:hover
+{
+    color: #006669;
+}
+.page-wrapper
+{
+    position: relative;
+    margin-bottom: 70px;
+}
+
+/* POST SLIDER */
+
+.slider-title
+{
+    text-align: center;
+    margin: 30px auto;
+}
+.post-slider
+{ 
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.post-wrapper
+{
+    width: 85%;
+    height: 350px;
+    margin: 0px auto;
+    overflow: hidden;
+    padding: 10px 0px 10px 0px;
+
+}
+
+.post
+{
+    margin: 0px 10px;
+    height: 330px;
+    width: 300px;
+    display: inline-block;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+}
+
+.post-info
+{
+    height: 130px;
+    padding: 0px 5px;
+}
+.post-info a
+{
+    color: #444;
+}
+.post-slider .next
+{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    font-size: 2em;
+    color: #006669;
+    cursor: pointer;
+}
+.post-slider .prev
+{
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    font-size: 2em;
+    color: #006669;
+    cursor: pointer;
+}
+.post-slider .slider-img
+{
+    width: 100%;
+    height: 200px;
+}
+
+/* CONTENT */
+
+.content
+{
+    width: 95%;
+    margin: 0px auto;
+    margin-bottom: 100px;
+}
+.main-content
+{
+    float: left;
+    width: 70%;
+    padding: auto;
+}
+
+.sidebar
+{
+    width: 30%;
+    float: left;
+    height: 300px; 
+    
+}
+.recent-post-title{
+    margin: 20px;
+}
+
+.main-content .post
+{
+    width: 95%;
+    height: 270px;
+    margin: 10px 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.main-content .post .post-img
+{
+    width: 40%;
+    margin: 5px;
+    height: 95%;
+    float: left;
+}
+.post-preview
+{
+    margin-left: 10px;
+}
+
+.btn
+{
+    padding: .5rem;
+    background: #006669;
+    color: white;
+    border: 1px solid transparent;
+}
+.btn:hover
+{
+    padding: .5rem;
+    background: white;
+    color: #006669;
+    border: 1px solid #006669;
+}
+
+.sidebar{
+    height: fit-content;
+}
+.sidebar .section
+{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px; 
+}
+.sidebar .section.search
+{
+    margin-top: 90px;
+}
+
+.sidebar .section.topics ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.sidebar .section.topics ul li a
+{
+    display: block;
+    padding: 15px 0px;
+    color: #444;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar .section.topics ul li a:hover
+{
+    padding-left: 20px;
+    transition: all 0.3s;
+}
+
+
+.text-input
+{
+    padding: .7rem 1rem;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    outline: none; 
+    color: #444;
+    line-height: 1.5rem;
+    border: 1px solid #e0e0e0;
+    font-size: 1.2em;
+    font-family: 'Lora';
+}
+
+.btnnext
+{
+    position: absolute;
+    right: 33%;
+    bottom: -2.5%;
+}
+.btnprev
+{
+    position: absolute;
+    left: 4%;
+    bottom: -2.5%;
+}
+
+.current
+{
+    position: absolute;
+    left: 35%;
+    bottom: -2.5%;
+}
+
+.single
+{
+    background-color: white;
+    width: 65%;
+    margin: 0 10px;
+    padding: 0 10px;
+}
+.single .post-title
+{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* footer */
+footer
+{
+  color: #e0e0e0;
+  background-color: #444;
+  height: 100px;
+  text-align: center;
+  align-self: flex-end;
+  width: 100%;
+  margin-top: auto;
+}
+footer p
+{
+    margin-top: 30px;
+}
+
+/* AUTHPAGES */
+.auth-content
+{
+    width: 30%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.auth-content .form-title
+{
+    text-align: center;
+}
+
+.auth-content form div
+{
+    margin-bottom: 10px;
+}
+.btn-big
+{
+    font-size: 1em;
+    font-family: 'Lora';
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 750px) {
+header
+{
+        position: relative;
+}
+    .nav
+    {
+        width: 100%;
+        background-color: #0E94A0;
+        display: none;
+    }
+    header ul li
+    {
+        width: 100%;
+        text-align: center;
+    }
+    header ul li ul
+{
+    width: 100%;
+    display: none;
+    background-color: white ;
+    z-index: 99999999999;
+}
+header ul li ul.active2
+{
+    display: block;
+}
+.nav.active
+{
+    display: block;
+}
+header ul li ul li
+{
+    width: 100%;
+}
+header ul li ul li a
+{
+    padding: 10px;
+    color: #444;
+}
+#menu-toggle
+{
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 1.9em;
+    cursor: pointer;
+}
+}

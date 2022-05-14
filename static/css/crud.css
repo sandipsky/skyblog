@@ -1,0 +1,89 @@
+.crud-wrapper
+{
+    display: flex;
+    height: 100vh;
+}
+
+.left-sidebar
+{
+    flex: 2;
+    height: 100vh;
+    background-color: #234a57;
+}
+.left-sidebar ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    
+}
+.left-sidebar ul li a
+{
+    color: aliceblue;
+    padding: 18px;
+    display: block;
+}
+.left-sidebar ul li a:hover
+{
+    background-color: #004044;
+}
+
+.crud-content
+{
+    flex: 8;
+    height: 100vh;
+    padding: 40px 100px 100px;
+    overflow-y: scroll;
+}
+
+.crud-content .page-title
+{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+}
+th, td
+{
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.edit
+{
+    color: green;
+}
+.delete
+{
+    color: red;
+}
+.title
+{
+    color: black;
+}
+
+.edit:hover,
+.delete:hover,
+.title:hover{
+    text-decoration: underline;
+}
+
+.ck
+{
+    height: 500px;
+}
+
+form div
+{
+    margin-bottom: 15px;
+}
+
+form label
+{
+    font-size: 1.3em;
+}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+
+ <!-- Crud page wrapper -->
+ <div class="crud-wrapper">
+    <!-- left-sidebar -->
+    <div class="left-sidebar">
+        <ul>
+            <li><a href="create.html">Create Post</a></li>
+            <li><a href="#">Manage Posts</a></li>
+        </ul>
+    </div>
+    <!-- //left-sidebar -->
+
+    <!-- crud-content -->
+    <div class="crud-content">
+        <h2 class="page-title">Create a New Post</h2>
+        <form action="" method="post">
+            <div>
+                <label for="title">Title</label>
+            <input type="text" name="title" class="text-input">
+            </div>
+            <div>
+                <label for="body">Body</label>
+                <textarea name="body" id="body" class="ck"></textarea>
+            </div>
+            <div>
+                <label for="topic">Topic</label>
+                <select name="topic" class="text-input">
+                    <option value="Fiction">Fiction</option>
+                    <option value="Motivation">Motivation</option>
+                    <option value="Biography">Biography</option>
+                    <option value="Life Lessons">Life Lessons</option>
+                    <option value="Technology">Technology</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" class="btn btn-big" value="Create">
+            </div>
+            
+        </form>
+    </div>
+
+</div>
+<!-- crud-wrapper -->
+
+{% endblock %}

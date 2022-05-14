@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+
+</head>
+<body>
+    <!-- navbar -->
+    <header>
+        <div class="logo">
+            <h1 class="logo-text"><span>SkY</span>Blog</h1>
+        </div>
+        <i class="fa fa-bars" id="menu-toggle"></i>
+        <ul class="nav" id="menu1">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="register.html">SignUp</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li>
+                <a href="#" id="btn2">
+                    <i class="fa fa-user"></i>
+                    Profile
+                    <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
+                </a>
+                <ul id="menu2">
+                    <li><a href="create.html">Create</a></li>
+                    <li><a href="manage.html">Manage</a></li>
+                    <li><a href="#"><span>Logout</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <!-- main body -->
+    {% block content %}
+
+    {% endblock %}
+    <!-- //page-wrapper -->
+
+    <!-- footer -->
+    <footer>
+        <p>&copy; Copyright Sky Blog 2022 | Designed by sandipsky</p>
+    </footer>
+
+    <!-- javascript -->
+    <script src="{% static '/js/script.js' %}"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{% static '/js/slider.js' %}"></script>
+</body>
+</html>
