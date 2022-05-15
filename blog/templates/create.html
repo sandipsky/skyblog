@@ -15,11 +15,10 @@
     <!-- crud-content -->
     <div class="crud-content">
         <h2 class="page-title">Create a New Post</h2>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div>
                 <label for="title">Title</label>
-            <!-- <input type="text" name="title" class="text-input"> -->
                 {{form.title}}
             </div>
             <div>
@@ -29,14 +28,15 @@
             </div>
             <div>
                 <label for="topic">Topic</label>
-                <!-- <select name="topic" class="text-input">
-                    <option value="Fiction">Fiction</option>
-                    <option value="Motivation">Motivation</option>
-                    <option value="Biography">Biography</option>
-                    <option value="Life Lessons">Life Lessons</option>
-                    <option value="Technology">Technology</option>
-                </select> -->
                 {{form.category}}
+            </div>
+            <div>
+                <label for="author">Author</label>
+                {{form.author}}
+            </div>
+            <div>
+                <label for="topic">Cover Photo: </label>
+                {{form.cover}}
             </div>
             <div>
                 <input type="submit" class="btn btn-big" value="Create">

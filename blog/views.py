@@ -1,6 +1,7 @@
 from datetime import date
 from django.shortcuts import redirect, render
 from .models import *
+from .forms import *
 from django.core.paginator import Paginator
 
 # Create your views here.
@@ -20,14 +21,14 @@ def postDetail(request, pk):
     context = {'post':post}
     return render(request, 'detail.html', context)
 
-# def postCreate(request):
-#     form = PostForm()
-#     if request.method == 'POST':
-#         form = PostForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#         return redirect('/')
-#     else:
-#         form = PostForm()
-#     context = {'form':form}
-#     return render(request, 'create.html', context)
+def postCreate(request):
+    form = PostForm()
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+    else:
+        form = PostForm()
+    context = {'form':form}
+    return render(request, 'create.html', context)

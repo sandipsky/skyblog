@@ -15,7 +15,7 @@
             <!-- sliderpostlist -->
             {% for recent in recents %}
             <div class="post">
-                <img src="{{recent.cover.url}}" alt="" class="slider-img">
+                <img src="{{recent.cover.url}}" alt="s" class="slider-img">
                 <div class="post-info">
                     <h4><a href="{% url 'detail' recent.id %}"> {{recent.title}}</a></h4>
                     <i class="far fa-user"> {{recent.author}}</i>
@@ -42,7 +42,7 @@
         <!-- postlist -->
         {% for post in page_obj %}
         <div class="post">
-            <img src="{{post.cover.url}}" alt="" class="post-img">
+            <img src="{{post.cover.url}}" alt="s" class="post-img">
         <div class="post-preview">
             <h2><a href="{% url 'detail' post.id %}">{{post.title}}</a></h2>
             <i class="far fa-user"> {{post.author}}</i>
