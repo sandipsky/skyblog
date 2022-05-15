@@ -20,10 +20,14 @@ def postDetail(request, pk):
     context = {'post':post}
     return render(request, 'detail.html', context)
 
-# def createPost(request):
+# def postCreate(request):
 #     form = PostForm()
 #     if request.method == 'POST':
 #         form = PostForm(request.POST)
 #         if form.is_valid():
 #             form.save()
 #         return redirect('/')
+#     else:
+#         form = PostForm()
+#     context = {'form':form}
+#     return render(request, 'create.html', context)
