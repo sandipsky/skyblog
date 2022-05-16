@@ -337,6 +337,12 @@ header ul li a:hover
     text-align: center;
     margin-bottom: 40px;
 }
+.singleimg
+{
+    height: 450px;
+    width: 100%;
+    margin: 10px auto;
+}
 
 /* footer */
 footer

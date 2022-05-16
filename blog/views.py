@@ -32,3 +32,14 @@ def postCreate(request):
         form = PostForm()
     context = {'form':form}
     return render(request, 'create.html', context)
+
+def postUpdate(request, pk):
+    post = Post.objects.get(id=pk)
+    form = PostForm(instance=post)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            form.save()
+        return redirect('/')
+    context = {'form':form}
+    return render(request, 'edit.html', context)

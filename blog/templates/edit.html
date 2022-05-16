@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+ <!-- Crud page wrapper -->
+ <div class="crud-wrapper">
+    <!-- left-sidebar -->
+    <div class="left-sidebar">
+        <ul>
+            <li><a href="create.html">Create Post</a></li>
+            <li><a href="#">Manage Posts</a></li>
+        </ul>
+    </div>
+    <!-- //left-sidebar -->
+
+    <!-- crud-content -->
+    <div class="crud-content">
+        <h2 class="page-title">Create a New Post</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div>
+                <label for="title">Title</label>
+                {{form.title}}
+            </div>
+            <div>
+                <label for="body">Body</label>
+                <!-- <textarea name="desc" id="body" class="ck"></textarea> -->
+                {{form.desc}}
+            </div>
+            <div>
+                <label for="topic">Topic</label>
+                {{form.category}}
+            </div>
+            <div>
+                <label for="author">Author</label>
+                {{form.author}}
+            </div>
+            <div>
+                <label for="topic">Cover Photo: </label>
+                {{form.cover}}
+            </div>
+            <div>
+                <input type="submit" class="btn btn-big" value="Update">
+            </div>
+            
+        </form>
+    </div>
+
+</div>
+<!-- crud-wrapper -->
+
+{% endblock %}

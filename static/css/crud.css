@@ -1,13 +1,10 @@
 .crud-wrapper
 {
     display: flex;
-    height: 100vh;
 }
-
 .left-sidebar
 {
     flex: 2;
-    height: 100vh;
     background-color: #234a57;
 }
 .left-sidebar ul
@@ -31,9 +28,9 @@
 .crud-content
 {
     flex: 8;
-    height: 100vh;
+    height: fit-content;
     padding: 40px 100px 100px;
-    overflow-y: scroll;
+
 }
 
 .crud-content .page-title
