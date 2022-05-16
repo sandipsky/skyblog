@@ -43,3 +43,10 @@ def postUpdate(request, pk):
         return redirect('/')
     context = {'form':form}
     return render(request, 'edit.html', context)
+
+def postManage(request):
+    posts = Post.objects.all()
+    context = {'posts':posts}
+    return render(request, 'manage.html', context)
+
+
