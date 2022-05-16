@@ -8,4 +8,7 @@ urlpatterns = [
     path('edit/<int:pk>', postUpdate, name='update'),
     path('manage/', postManage, name='manage'),
     path('delete/<int:pk>', postDelete, name='delete'),
+    path('register/', register, name='register'),
+    path('login/', loginUser, name='login'),
+    path('logout/', logoutUser, name='logout'),
 ]
