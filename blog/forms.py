@@ -10,12 +10,11 @@ from django.contrib.auth.models import User
 class PostForm(ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'desc', 'category', 'author', 'cover']
+        fields = ['title', 'desc', 'category', 'cover']
         widgets={
             'title' : forms.TextInput(attrs={'class':'text-input', 'placeholder':'Enter task here'}),
             'desc' : forms.Textarea(attrs={'class':'text-input'}),
             'category' : forms.Select(attrs={'class':'text-input'}),
-            'author' : forms.TextInput(attrs={'class':'text-input', 'placeholder':'Enter task here'}),
         }
 
 class CreateUser(UserCreationForm):

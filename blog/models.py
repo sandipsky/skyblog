@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class PostCategory(models.Model):
@@ -11,7 +12,8 @@ class Post(models.Model):
     title = models.CharField(max_length=200, blank=True, null=True)
     desc = models.TextField(blank=True, null=True)
     date_created = models.DateField(auto_now_add=True, blank=True, null=True)
-    author = models.CharField(max_length=200, blank=True, null=True)
+    # author = models.CharField(max_length=200, blank=True, null=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     category = models.ForeignKey(PostCategory, on_delete=models.CASCADE, blank=True, null=True)
     cover = models.ImageField(upload_to='images', blank=True, null=True)
     

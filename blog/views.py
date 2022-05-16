@@ -23,11 +23,13 @@ def postDetail(request, pk):
     context = {'post':post}
     return render(request, 'detail.html', context)
 
+@login_required(login_url='login')
 def postCreate(request):
     form = PostForm(request.POST, request.FILES)
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
+            form.instance.author = request.user
             form.save()
         return redirect('/')
     else:
@@ -35,6 +37,7 @@ def postCreate(request):
     context = {'form':form}
     return render(request, 'create.html', context)
 
+@login_required(login_url='login')
 def postUpdate(request, pk):
     post = Post.objects.get(id=pk)
     form = PostForm(instance=post)
@@ -46,12 +49,13 @@ def postUpdate(request, pk):
     context = {'form':form}
     return render(request, 'edit.html', context)
 
+@login_required(login_url='login')
 def postManage(request):
     posts = Post.objects.all()
     context = {'posts':posts}
     return render(request, 'manage.html', context)
 
-
+@login_required(login_url='login')
 def postDelete(request, pk):
     item = Post.objects.get(id=pk)
     if request.method == 'POST':
