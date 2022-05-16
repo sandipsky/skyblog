@@ -50,3 +50,10 @@ def postManage(request):
     return render(request, 'manage.html', context)
 
 
+def postDelete(request, pk):
+    item = Post.objects.get(id=pk)
+    if request.method == 'POST':
+        item.delete()
+        return redirect('manage')
+    context = {'item':item}
+    return render(request, 'delete.html', context)
