@@ -18,3 +18,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def get_photo_url(self):
+        if self.cover and hasattr(self.cover, 'url'):
+            return self.cover.url
+        else:
+            return "/static/images/1.jpg"
