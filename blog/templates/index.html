@@ -49,8 +49,8 @@
             &nbsp;
             <i class="far fa-calendar"> {{post.date_created}}</i>
             <p class="preview-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Voluptate tempore pariatur ab repellendus, earum eos!
+                {{post.getwords}}
+                
             </p>
             <a href="{% url 'detail' post.id %}" class="btn">Read More</a>
         </div>

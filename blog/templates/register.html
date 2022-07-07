@@ -5,21 +5,48 @@
         <form action="" method="post">
             {% csrf_token %}
             <h2 class="form-title">Sign Up</h2>
+            
             <div>
                 <label for="username">Username</label>
-                {{form.username}}
+               
+                    {{form.username}} 
             </div>
-
+            {% if form.username.errors %}
+            <div class="form-errors">
+            <span>{{form.username.errors|striptags}}</span>
+            </div>
+            {% endif %}
+            
+            <div>
+                <label for="email">Email</label>
+                {{form.email}}
+                
+            </div>
+            {% if form.email.errors %}
+            <div class="form-errors">
+            <span>{{form.email.errors|striptags}}</span>
+            </div>
+            {% endif %}
 
             <div>
                 <label for="password1">Password</label>
                 {{form.password1}}
             </div>
+            {% if form.password1.errors %}
+            <div class="form-errors">
+            <span>{{form.password1.errors|striptags}}</span>
+            </div>
+            {% endif %}
 
             <div>
                 <label for="password2">Confirm Password</label>
                 {{form.password2}}
             </div>
+            {% if form.password2.errors %}
+            <div class="form-errors">
+            <span>{{form.password2.errors|striptags}}</span>
+            </div>
+            {% endif %}
             <div>
                 <input type="submit" class="btn btn-big" name="register-btn" value="Sign Up">
             </div>

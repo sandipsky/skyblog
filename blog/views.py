@@ -69,8 +69,11 @@ def register(request):
     if request.method == 'POST':
         form = CreateUser(request.POST)
         if form.is_valid():
-            form.save()
-        return redirect('login')
+            new_user = form.save(commit=False)
+            new_user.save()
+            return redirect('login')
+    else:
+        form = CreateUser()
     context = {
         'form' : form
     }
